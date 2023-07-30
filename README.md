@@ -1,6 +1,8 @@
 # ChatAppIOS
 The Chat App is a messaging application that allows users to connect with others and start chatting. 
 
+<img src="ChatApp/Assets.xcassets/userListImage.png" width="auto" height="500" />
+
 ## Features
 - User Registration: New users can sign up and create an account to join the Chat App community.
 - User Search: Users can search for other users and view their profiles.
