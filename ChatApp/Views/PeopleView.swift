@@ -43,7 +43,7 @@ struct UserItem: View {
                 .font(.subheadline)
             Divider()
         }
-        .padding(.horizontal, 25)
+        .padding(.horizontal, 20)
     }
 }
 

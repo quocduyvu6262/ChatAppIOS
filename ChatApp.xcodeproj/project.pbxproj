@@ -19,7 +19,6 @@
 		7D433B9C2A74767D000FF94C /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D433B9B2A74767D000FF94C /* AppManager.swift */; };
 		7D433BA62A7485AC000FF94C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D433BA52A7485AC000FF94C /* LoginView.swift */; };
 		7D433BA82A7485AF000FF94C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D433BA72A7485AF000FF94C /* SignupView.swift */; };
-		7D433BAA2A7485D9000FF94C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D433BA92A7485D9000FF94C /* HomeView.swift */; };
 		7D433BAE2A74865A000FF94C /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D433BAD2A74865A000FF94C /* ChatService.swift */; };
 		7DEADACA2A760BB500635A91 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEADAC92A760BB500635A91 /* SocketIO */; };
 		7DEADACC2A760E7F00635A91 /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEADACB2A760E7F00635A91 /* PeopleView.swift */; };
@@ -62,7 +61,6 @@
 		7D433B9B2A74767D000FF94C /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		7D433BA52A7485AC000FF94C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7D433BA72A7485AF000FF94C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		7D433BA92A7485D9000FF94C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../../../../../../.Trash/Views/HomeView.swift; sourceTree = "<group>"; };
 		7D433BAD2A74865A000FF94C /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		7DEADACB2A760E7F00635A91 /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		7DEADACD2A76180C00635A91 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +118,7 @@
 		7D433B5F2A738415000FF94C /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D6A72F02A76581D00A5D3E5 /* Preview Content */,
 				7D433BA22A74859F000FF94C /* Views */,
 				7D433B8D2A73899B000FF94C /* Services */,
 				7D433B8A2A738523000FF94C /* ViewModels */,
@@ -175,7 +174,6 @@
 			children = (
 				7D433BAC2A74861B000FF94C /* ChatView */,
 				7D433BAB2A7485E6000FF94C /* AuthView */,
-				7D433BA92A7485D9000FF94C /* HomeView.swift */,
 				7DEADACB2A760E7F00635A91 /* PeopleView.swift */,
 			);
 			path = Views;
@@ -195,6 +193,13 @@
 			children = (
 			);
 			path = ChatView;
+			sourceTree = "<group>";
+		};
+		7D6A72F02A76581D00A5D3E5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +340,6 @@
 				7D433BA82A7485AF000FF94C /* SignupView.swift in Sources */,
 				7DEADACE2A76180D00635A91 /* PeopleViewModel.swift in Sources */,
 				7D433B912A738FDC000FF94C /* LoginViewModel.swift in Sources */,
-				7D433BAA2A7485D9000FF94C /* HomeView.swift in Sources */,
 				7DEADAD02A762B8100635A91 /* PeopleService.swift in Sources */,
 				7D433B8F2A7389CD000FF94C /* AuthService.swift in Sources */,
 				7DEADAD22A762C0200635A91 /* Errors.swift in Sources */,
