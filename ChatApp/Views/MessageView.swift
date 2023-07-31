@@ -9,27 +9,46 @@ import SwiftUI
 
 
 struct MessageRow: View {
-    let message: ReceivedMessage
-
+    var message: ReceivedMessage
+    var prevMessage: ReceivedMessage?
+    
+    init(message: ReceivedMessage, prevMessage: ReceivedMessage? = nil) {
+        self.message = message
+        self.prevMessage = prevMessage
+    }
     var body: some View {
         HStack {
-            if message.sender_id == getUserID() {
-                Spacer()
-            }
-
-            VStack(alignment: message.sender_id == getUserID() ? .trailing : .leading, spacing: 5) {
-                Text(message.username)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                Text(message.text)
-            }
-            .padding(10)
-            .background(message.sender_id == getUserID() ? Color.blue : Color.green)
-            .cornerRadius(10)
-
             if message.sender_id != getUserID() {
+                VStack(alignment: .leading){
+                    if (prevMessage == nil || (prevMessage != nil && prevMessage?.sender_id != message.sender_id) ){
+                        Text(message.username)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .padding(.top, 5)
+                            .padding(.bottom, -5)
+                    }
+                    HStack(alignment: .bottom){
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(message.text)
+                                .foregroundColor(.black)
+                        }.padding(10)
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                    }
+                }
                 Spacer()
+            } else {
+                Spacer()
+                HStack(alignment: .bottom){
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(message.text)
+                            .foregroundColor(.white)
+                    }.padding(10)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                }
             }
+
         }
     }
 }
@@ -40,10 +59,17 @@ struct MessageView: View {
     var body: some View {
         VStack{
             ScrollView{
-                ForEach(messageVM.messages, id: \.self){ message in
-                    MessageRow(message: message)
+                VStack{
+                    ForEach(messageVM.messages.indices, id: \.self){ index in
+                        if index > 0 {
+                            MessageRow(message: messageVM.messages[index], prevMessage: messageVM.messages[index - 1])
+                       } else {
+                            MessageRow(message: messageVM.messages[index])
+                        }
+                    }
                 }
-            }
+            }.padding(.horizontal,8)
+            
             HStack {
                 TextField("Type your message...", text: $message)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -65,3 +91,4 @@ struct MessageView_Previews: PreviewProvider {
         MessageView()
     }
 }
+
