@@ -11,3 +11,4 @@ enum SelectedAuthMenu: String {
     case login
     case signup
 }
+

@@ -61,6 +61,9 @@ struct PeopleView: View {
                         .fontWeight(.bold)
 
                     Spacer()
+                    NavigationLink(destination: MessageView()){
+                        Text("Enter Chat")
+                    }
 
                     Button("Logout") {
                         resetAuthData()

@@ -50,3 +50,17 @@ func resetAuthData() -> Void {
         print("Failed to clear auth data.")
     }
 }
+
+
+func convertObjectToJSONString<T: Encodable>(_ object: T) -> String? {
+    let encoder = JSONEncoder()
+    do {
+        let jsonData = try encoder.encode(object)
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            return jsonString
+        }
+    } catch {
+        print("Error converting object to JSON string: \(error)")
+    }
+    return nil
+}
