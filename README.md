@@ -29,7 +29,7 @@ The Chat App is built using the following technologies:
 To run the Chat App locally on your machine, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/chat-app.git`
-2. Navigate to the project directory: `cd server`
+2. Navigate to the server directory: `cd server`
 3. Install dependencies: `npm install`
 4. Set up the PostgreSQL database and configure the connection settings.
 5. Start the development server: `npm run start`
