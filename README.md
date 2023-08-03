@@ -1,4 +1,4 @@
-# ChatAppIOS
+# iOS Chat App
 The Chat App is a messaging application that allows users to connect with others and start chatting. 
 
 
