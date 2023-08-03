@@ -18,8 +18,9 @@ The Chat App is built using the following technologies:
 - Frontend: SwiftUI
   - SwiftUI is used to create the user interface, providing a responsive app design.
 
-- Backend: Node.js with Express
+- Backend: Node.js with Express and WebSocket
   - Node.js with Express is used to develop the server-side logic and handle API requests.
+  - Using WebSocket for real-time messaging.
 
 - Database: PostgreSQL
   - PostgreSQL is used as the database management system to store user data and messages.
