@@ -15,8 +15,26 @@ const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
-db.users = require('./user')(sequelize, DataTypes)
-db.messages = require('./message')(sequelize, DataTypes)
+const User = require('./user')(sequelize, DataTypes)
+const Message = require('./message')(sequelize, DataTypes)
+const Conversation = require('./conversation')(sequelize, DataTypes)
+
+User.hasMany(Message, {
+    foreignKey: 'sender_id',
+})
+Message.belongsTo(User)
+
+Conversation.hasOne(Message, {
+  foreignKey: 'convo_id'
+});
+Message.belongsTo(Conversation);
+
+
+db.users = User
+db.messages = Message
+db.conversations = Conversation
+
+
 
 module.exports = db
 

@@ -6,6 +6,14 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
+        convo_id: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            references:{
+                model: 'Conversation',
+                key: 'id'
+            }
+        },
         sender_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
