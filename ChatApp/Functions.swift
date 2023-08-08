@@ -65,3 +65,4 @@ func convertObjectToJSONString<T: Encodable>(_ object: T) -> String? {
     }
     return nil
 }
+

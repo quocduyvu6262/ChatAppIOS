@@ -51,6 +51,7 @@ class AuthService {
                 return
             }
             
+            
             guard let authResponse = try? JSONDecoder().decode(AuthResponse.self, from: data) else{
                 completion(.failure(.invalidSignupCredentials))
                 return

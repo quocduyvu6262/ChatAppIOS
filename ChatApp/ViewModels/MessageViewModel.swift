@@ -13,12 +13,17 @@ class MessageViewModel: ObservableObject {
     @Published var selectedPerson: String = ""
     
     
-    func connect() {
+    func connect(selectedID: Int) {
         self.getAllMessages()
-        ChatService.shared.connect()
+//        ChatService.shared.connect()
+        ChatService.shared.startConversation(user1ID: getUserID(), user2ID: selectedID)
         ChatService.shared.receiveMessage() { id, sender_id, username, text, createdAt in
             self.receiveMessage(id: id, sender_id: sender_id, username: username, text: text, createdAt: createdAt)
         }
+    }
+    
+    func disconnect() {
+        ChatService.shared.leaveConversation()
     }
     
     func sendMessage(message: String){
@@ -44,4 +49,5 @@ class MessageViewModel: ObservableObject {
             }
         }
     }
+    
 }

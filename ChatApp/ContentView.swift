@@ -29,7 +29,9 @@ struct ContentView: View {
             }
         }.onReceive(AppManager.Authenticated, perform: {
             isAuthenticated = $0
-       })
+        }).onAppear(){
+            ChatService.shared.connect()
+        }
     }
 }
 

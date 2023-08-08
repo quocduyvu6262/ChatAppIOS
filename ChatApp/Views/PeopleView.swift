@@ -61,9 +61,9 @@ struct PeopleView: View {
                         .fontWeight(.bold)
 
                     Spacer()
-                    NavigationLink(destination: MessageView()){
-                        Text("Enter Chat")
-                    }
+//                    NavigationLink(destination: MessageView()){
+//                        Text("Enter Chat")
+//                    }
 
                     Button("Logout") {
                         resetAuthData()
@@ -76,7 +76,9 @@ struct PeopleView: View {
                 ScrollView(){
                     ForEach(peopleVM.userList) { user in
                         if userID != user.id{
-                            UserItem(user: user)
+                            NavigationLink(destination: MessageView(selectedID: user.id)){
+                                UserItem(user: user)
+                            }
                         }
                     }
                 }

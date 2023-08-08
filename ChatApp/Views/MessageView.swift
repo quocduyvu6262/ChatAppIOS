@@ -56,6 +56,7 @@ struct MessageRow: View {
 struct MessageView: View {
     @StateObject var messageVM: MessageViewModel = MessageViewModel()
     @State var message: String = ""
+    let selectedID: Int
     var body: some View {
         VStack{
             ScrollView{
@@ -81,14 +82,17 @@ struct MessageView: View {
             .padding()
         }
         .onAppear(){
-            messageVM.connect()
+            messageVM.connect(selectedID: selectedID)
+        }
+        .onDisappear(){
+            ChatService.shared.leaveConversation()
         }
     }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView()
+        MessageView(selectedID: 0)
     }
 }
 
